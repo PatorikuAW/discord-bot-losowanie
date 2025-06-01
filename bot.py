@@ -59,4 +59,18 @@ async def losuj(ctx, liczba_kart: int = 5, tryb: str = "n"):
 
     await ctx.send("🎴 Wylosowane karty:\n" + "\n".join(wyniki))
 
-bot.run("DISCORD_TOKEN")
+TOKEN = os.getenv("DISCORD_TOKEN")
+
+if not TOKEN:
+    print("❌ Nie znaleziono tokena!")
+else:
+    bot.run(TOKEN)
+
+import os
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+if not TOKEN:
+    print("❌ Nie znaleziono tokena!")
+else:
+    print("✅ Token znaleziony, uruchamiam bota...")
+    bot.run(TOKEN)
